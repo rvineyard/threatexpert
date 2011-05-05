@@ -3,6 +3,7 @@ source "http://rubygems.org"
 # Example:
 gem "nokogiri", ">= 1.4.4"
 gem "multipart-post", ">= 1.1.0"
+gem "crack", ">= 0.1.8"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

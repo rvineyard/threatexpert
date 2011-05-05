@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'crack'
 require 'open-uri'
 
 module ThreatExpert
@@ -8,7 +9,7 @@ module ThreatExpert
 		end
 		
 		def md5(hash)
-			url = @@baseurl+"/report.aspx?md5=#{hash}"
+			url = @@baseurl+"/report.aspx?md5=#{hash}&xml=1"
 			_parse_report(url)
 		end
 		
@@ -36,10 +37,8 @@ module ThreatExpert
 		
 		def _parse_report(page)
 			page = open(page).read
-			return nil unless page =~ /Submission Summary:/
-			n = Nokogiri::HTML.parse(page)
-			ul = n.xpath('//ul')
-			t = ul.to_s.gsub(/<img.*?>/,'')
+			return nil if page =~ /<status>not_found<\/status>/
+			Crack::XML.parse(page)
 		end
 	end
 end

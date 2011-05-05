@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report xsi:noNamespaceSchemaLocation="report.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<title>ThreatExpert Report</title>
+	<subreports>
+		<subreport>
+			<submission_summary>
+				<submission_details>
+					<submission_received>
+						<day>2</day>
+						<month>2</month>
+						<year>2010</year>
+						<hour>0</hour>
+						<minute>52</minute>
+						<second>21</second>
+					</submission_received>
+					<processing_time>
+						<hours>0</hours>
+						<minutes>6</minutes>
+						<seconds>47</seconds>
+					</processing_time>
+					<sample_info_collection>
+						<sample_info>
+							<md5>70CF23409191820593022CA797FBCBD0</md5>
+							<sha1>39C8065540467C17EF68E516E4ED23BB88A655D3</sha1>
+							<filesize>43712</filesize>
+							<alias_nav>Trojan.Pandex</alias_nav>
+							<alias_kav>Backdoor.Win32.HareBot.anq</alias_kav>
+							<alias_nai></alias_nai>
+							<alias_trend></alias_trend>
+							<alias_pctools>Trojan.Pandex</alias_pctools>
+							<alias_sophos>Mal/Harebot-A</alias_sophos>
+							<alias_microsoft>Trojan:Win32/Malagent</alias_microsoft>
+							<alias_ikarus></alias_ikarus>
+							<alias_ahnlab></alias_ahnlab>
+							<packer></packer>
+						</sample_info>
+					</sample_info_collection>
+				</submission_details>
+				<flag_collection>
+					<flag>
+						<description>Creates a startup registry entry.</description>
+						<severity>2</severity>
+					</flag>
+					<flag>
+						<description>Contains characteristics of an identified security risk.</description>
+						<severity>10</severity>
+					</flag>
+				</flag_collection>
+			</submission_summary>
+			<technical_details>
+				<known_threat_category_collection>
+					<known_threat_category>
+						<name>Backdoor</name>
+						<description>A malicious backdoor trojan that runs in the background and allows remote access to the compromised system</description>
+					</known_threat_category>
+					<known_threat_category>
+						<name>Trojan</name>
+						<description>A malicious trojan horse or bot that may represent security risk for the compromised system and/or its network environment</description>
+					</known_threat_category>
+				</known_threat_category_collection>
+				<added_files>
+					<added_files_collection>
+						<added_file>
+							<filenames_collection>
+								<filename>%UserProfile%\imPlayok.exe</filename>
+								<filename>%System%\imPlayok.exe</filename>
+								<filename>[file and pathname of the sample #1]</filename>
+							</filenames_collection>
+							<md5>70CF23409191820593022CA797FBCBD0</md5>
+							<sha1>39C8065540467C17EF68E516E4ED23BB88A655D3</sha1>
+							<filesize>43712</filesize>
+							<alias_nav>Trojan.Pandex</alias_nav>
+							<alias_kav>Backdoor.Win32.HareBot.anq</alias_kav>
+							<alias_nai></alias_nai>
+							<alias_trend></alias_trend>
+							<alias_pctools>Trojan.Pandex</alias_pctools>
+							<alias_sophos>Mal/Harebot-A</alias_sophos>
+							<alias_microsoft>Trojan:Win32/Malagent</alias_microsoft>
+							<alias_ikarus></alias_ikarus>
+							<alias_ahnlab></alias_ahnlab>
+							<packer></packer>
+						</added_file>
+					</added_files_collection>
+					<notes_collection>
+						<note>%UserProfile% is a variable that specifies the current user's profile folder. By default, this is C:\Documents and Settings\[UserName] (Windows NT/2000/XP).</note>
+						<note>%System% is a variable that refers to the System folder. By default, this is C:\Windows\System (Windows 95/98/Me), C:\Winnt\System32 (Windows NT/2000), or C:\Windows\System32 (Windows XP).</note>
+					</notes_collection>
+				</added_files>
+				<added_processes>
+					<added_processes_collection>
+						<added_process>
+							<process_name>imPlayok.exe</process_name>
+							<process_filename>%System%\implayok.exe</process_filename>
+							<main_module_size>43776</main_module_size>
+							<attached_zip_dump>process_dump_a.zip</attached_zip_dump>
+						</added_process>
+						<added_process>
+							<process_name>imPlayok.exe</process_name>
+							<process_filename>%UserProfile%\implayok.exe</process_filename>
+							<main_module_size>43776</main_module_size>
+							<attached_zip_dump>process_dump_b.zip</attached_zip_dump>
+						</added_process>
+					</added_processes_collection>
+				</added_processes>
+				<added_regvalues>
+					<regvalues_structure>
+						<regkey>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</regkey>
+						<regvalues_collection>
+							<regvalue>
+								<value>imPlayok</value>
+								<contents>&quot;%System%\imPlayok.exe&quot;</contents>
+							</regvalue>
+						</regvalues_collection>
+						<notes_collection>
+							<note>so that imPlayok.exe runs every time Windows starts</note>
+						</notes_collection>
+					</regvalues_structure>
+					<regvalues_structure>
+						<regkey>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run</regkey>
+						<regvalues_collection>
+							<regvalue>
+								<value>imPlayok</value>
+								<contents>&quot;%UserProfile%\imPlayok.exe&quot;</contents>
+							</regvalue>
+						</regvalues_collection>
+						<notes_collection>
+							<note>so that imPlayok.exe runs every time Windows starts</note>
+						</notes_collection>
+					</regvalues_structure>
+				</added_regvalues>
+			</technical_details>
+		</subreport>
+	</subreports>
+</report>
