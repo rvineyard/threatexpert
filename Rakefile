@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
 	gem.description = %Q{Provides a simple API to query ThreatExpert by malware name (to receive a list of matching hashes) or hash (to receive a malware report).  This also provides a simple upload feature.}
 	gem.email = "rubygems@chrislee.dhs.org"
 	gem.authors = ["Chris Lee"]
-	gem.add_runtime_dependency "nokogiri", ">= 1.4.4"
+	gem.add_runtime_dependency "nokogiri", ">= 1.6.0"
 	gem.add_runtime_dependency "multipart-post", ">= 1.1.0"
 	gem.add_runtime_dependency "crack", ">= 0.1.8"
 end

@@ -9,14 +9,14 @@ module ThreatExpert
 		@@submiturl = "http://www.threatexpert.com/submit.aspx"
 
 		def submit(filename, email, headers={})
-			uri = URI.parse(@@submiturl)
+			uri = URI(@@submiturl)
 			http = Net::HTTP.new(uri.host, uri.port)
 			headers['User-Agent'] ||= "Ruby/#{RUBY_VERSION} threatexpert gem (https://github.com/chrislee35/threatexpert)"
 			headers['Referer'] ||= @@submiturl
-			resp, data = http.get(uri.path, headers)
+			resp = Net::HTTP.get_response(uri)
 			cookie = resp.header["set-cookie"] if resp.header["set-cookie"]
 			
-			doc = Nokogiri::HTML.parse(data)
+			doc = Nokogiri::HTML.parse(resp.body)
 			forms = doc.xpath('//form')
 			inputs = forms[0].xpath('//input')
 			params = {}

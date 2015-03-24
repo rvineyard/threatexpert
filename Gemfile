@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 # Add dependencies required to use your gem here.
 # Example:
-gem "nokogiri", ">= 1.4.4"
+gem "nokogiri", ">= 1.6.0"
 gem "multipart-post", ">= 1.1.0"
 gem "crack", ">= 0.1.8"
 
@@ -9,7 +9,7 @@ gem "crack", ">= 0.1.8"
 # Include everything needed to run rake, tests, features, etc.
 group :development do
   gem "shoulda", ">= 0"
-  gem "bundler", "~> 1.0.0"
-  gem "jeweler", "~> 1.5.2"
+  gem "bundler", ">= 1.0.0"
+  gem "jeweler", ">= 1.5.2"
   gem "rcov", ">= 0"
 end
